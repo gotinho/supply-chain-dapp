@@ -123,7 +123,7 @@ App = {
 
     handleButtonClick: async function(event) {
         event.preventDefault();
-
+        App.readForm();
         App.getMetaskAccountID();
 
         var processId = parseInt($(event.target).data('id'));
@@ -295,7 +295,16 @@ App = {
         App.contracts.SupplyChain.deployed().then(function(instance) {
           return instance.fetchItemBufferOne(App.upc);
         }).then(function(result) {
-          $("#ftc-item").text(result);
+          $("#ftc-item1").html(`
+          itemSKU = ${result.itemSKU},<br>
+          itemUPC = ${result.itemUPC},<br>
+          ownerID = ${result.ownerID},<br>
+          originFarmerID = ${result.originFarmerID},<br>
+          originFarmName = ${result.originFarmName},<br>
+          originFarmInformation = ${result.originFarmInformation},<br>
+          originFarmLatitude = ${result.originFarmLatitude},<br>
+          originFarmLongitude = ${result.originFarmLongitude}<br>        
+          `);
           console.log('fetchItemBufferOne', result);
         }).catch(function(err) {
           console.log(err.message);
@@ -309,7 +318,15 @@ App = {
         App.contracts.SupplyChain.deployed().then(function(instance) {
           return instance.fetchItemBufferTwo.call(App.upc);
         }).then(function(result) {
-          $("#ftc-item").text(result);
+          $("#ftc-item2").html(`
+           productID = ${result.productID},<br>
+           productNotes = ${result.productNotes},<br>
+           productPrice = ${result.productPrice},<br>
+           itemState = ${result.itemState},<br>
+           distributorID = ${result.distributorID},<br>
+           retailerID = ${result.retailerID},<br>
+           consumerID = ${result.consumerID}<br>
+          `);
           console.log('fetchItemBufferTwo', result);
         }).catch(function(err) {
           console.log(err.message);
