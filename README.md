@@ -21,7 +21,8 @@
 ![sequence data](diagrams/diagrams-data.drawio.png)
 
 
-## Project Libraries
+## Libraries
 
-* Web3
+* Web3 1.6.0
+* @truffle/contract 4.3.38
 
