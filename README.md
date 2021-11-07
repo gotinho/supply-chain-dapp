@@ -23,6 +23,8 @@
 
 ## Libraries
 
-* Web3 1.6.0
 * @truffle/contract 4.3.38
-
+* Truffle v5.4.14 (core: 5.4.14)
+* Solidity - ^0.4.23 (solc-js)
+* Node v15.6.0
+* Web3.js v1.5.3
