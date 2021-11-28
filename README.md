@@ -21,15 +21,12 @@
 ![sequence data](diagrams/diagrams-data.drawio.png)
 
 
-## Libraries
+## Libraries Used
 
-Made some changes to watch the emitted events, using Truffle v5 and Web3 v1.5
-
-* @truffle/contract 4.3.38
-* Truffle v5.4.14 (core: 5.4.14)
-* Solidity - ^0.4.23 (solc-js)
-* Node v15.6.0
-* Web3.js v1.5.3
+* @truffle/contract 4.3.38 - Provide better contract abstraction making it easier to interact.
+* Truffle v5.4.14 (core: 5.4.14) - It is a development environment, it provides a testing framework and asset pipeline, making blockchain development easier.
+* Solidity - ^0.4.23 (solc-js) - Used for compiling solidity code.
+* Web3.js v1.5.3 - It allows us to interact with the blockchain, and it is a required dependency of Truffle.
 
 # Rinkeby Deploy
 
@@ -48,3 +45,35 @@ Contract: [0xAf445c7e4bCEfd760E1a8A362B9E68750dcAfD2F](https://rinkeby.etherscan
 * Received - [0xca58feb03c3d4d8c1a07bd76aec2a295d51a72531df26d16e52da83846d7f023](https://rinkeby.etherscan.io/tx/0xca58feb03c3d4d8c1a07bd76aec2a295d51a72531df26d16e52da83846d7f023)
 * Purchased - [0xb71354f070762bda6ebdd2e26ba3f5860a57f767a60c8925440a8b9a020d705b](https://rinkeby.etherscan.io/tx/0xb71354f070762bda6ebdd2e26ba3f5860a57f767a60c8925440a8b9a020d705b)
 
+# How to run the tests
+
+Make sure [ganache](https://www.trufflesuite.com/ganache) is running on port 8545
+
+On a terminal run the commands.
+
+```
+npm install
+truffle test
+```
+
+# How to run and use the Front End
+
+Make sure [ganache](https://www.trufflesuite.com/ganache) is running on port 8545
+
+On a terminal run the commands.
+```
+npm install
+truffle compile
+truffle migrate
+npm run dev
+```
+
+Go to http://localhost:3000/ and connect your MetaMask.
+
+Fill in the 'UPC', 'Farm Name', 'Farm Information', 'Farm Latitude', 'Farm Longitude', 'Product Notes' and 'Product Price' inputs.
+
+Then go through the supply chain steps by clicking the buttons on sequence: Harvest, Process, Pack, ForSale, Buy, Ship, Receive and Purchase.
+
+Transactions hash will appear on 'Transaction History' section.
+
+You can fetch product data stored on the blockchain by filling in the UPC input and clicking the buttons 'Fetch Data 1' and 'Fetch Data 2'.

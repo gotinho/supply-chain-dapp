@@ -104,7 +104,7 @@ contract SupplyChain is
 
     // Define a modifier that checks if an item.state of a upc is Packed
     modifier packed(uint256 _upc) {
-        require(items[_upc].itemState == State.Packed, "Item no packed");
+        require(items[_upc].itemState == State.Packed, "Item not packed");
         _;
     }
 

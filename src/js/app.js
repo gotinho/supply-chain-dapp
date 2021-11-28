@@ -225,7 +225,7 @@ App = {
             $("#ftc-item").text(result);
             console.log('sellItem',result);
         }).catch(function(err) {
-            console.log(err.message);
+            console.log(err);
         });
     },
 
